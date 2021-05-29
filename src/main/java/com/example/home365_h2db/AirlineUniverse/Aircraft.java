@@ -6,33 +6,26 @@ import javax.persistence.*;
 @Table
 public class Aircraft {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String airlineName;
     private double monthsInuse;
     private double originalPrice;
-    private int maxDistance;
+    private double maxDistance;
 
 
     public void setAirlineName(String airlineName) {
         this.airlineName = airlineName;
     }
 
-    public Aircraft(String airlineName, double monthsInuse, double originalPrice, int maxDistance) {
+    public Aircraft(String airlineName, double monthsInuse, double originalPrice, double maxDistance) {
         this.airlineName = airlineName;
         this.monthsInuse = monthsInuse;
         this.originalPrice = originalPrice;
         this.maxDistance = maxDistance;
 
     }
-    public Aircraft(Long id, String airlineName, double monthsInuse, double originalPrice, int maxDistance) {
-        this.id = id;
-        this.airlineName = airlineName;
-        this.monthsInuse = monthsInuse;
-        this.originalPrice = originalPrice;
-        this.maxDistance = maxDistance;
 
-    }
 
     public Aircraft() {
     }
@@ -54,7 +47,7 @@ public class Aircraft {
         return originalPrice;
     }
 
-    public int getMaxDistance() {
+    public double getMaxDistance() {
         return maxDistance;
     }
 }

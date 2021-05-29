@@ -2,8 +2,10 @@ package com.example.home365_h2db.AirlineUniverse;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Destination {
     @Id
     private String name;

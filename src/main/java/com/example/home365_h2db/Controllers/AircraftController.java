@@ -30,10 +30,16 @@ public class AircraftController {
     }
 
     @PostMapping("getAirline'sAircraft")
-    public List<Aircraft> getAirlinePlanes(@RequestParam(value = "airlineName") String airlineName){
+    public List<Aircraft> getAirlineAircrafts(@RequestParam(value = "airlineName") String airlineName){
         return aircraftService.getAirlinePlanes(airlineName);
     }
 
+    /**
+     * Selling Aircraft for its original price - months of use * 0.02
+     * @param airlineSeller Company seller
+     * @param aircraftId    Aircraft id
+     * @return receipt of transaction
+     */
     @DeleteMapping("/{sellAircraft}")
     public String SellAircraft(@RequestParam(name = "airlineSeller") String airlineSeller, @RequestParam(name = "aircraftId") Long aircraftId){
         return aircraftService.sellAircraft(airlineSeller, aircraftId);
