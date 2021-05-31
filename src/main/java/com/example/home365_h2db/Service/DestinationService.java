@@ -17,7 +17,7 @@ public class DestinationService {
     private static DestinationRepository destinationRepository;
 
     public DestinationService(DestinationRepository destinationRepository) {
-        this.destinationRepository = destinationRepository;
+        DestinationService.destinationRepository = destinationRepository;
     }
 
     public List<Destination> getDestinations() {
@@ -40,7 +40,7 @@ public class DestinationService {
         if (!destinationRepository.findByName(desName).isPresent())
             throw new IllegalStateException("HomeBase latitude and longitude of "+airline+" aren't present in the system");
         Destination home = destinationRepository.findObjByName(desName);
-        List<Distance> distances = new LinkedList<Distance>();
+        List<Distance> distances = new LinkedList<>();
 
         for (Destination dest : destinationRepository.findAll()) {
             if (dest.getName().equals(home.getName()))

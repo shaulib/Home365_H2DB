@@ -17,7 +17,7 @@ public class AircraftService {
     private static AircraftRepository aircraftRepository;
 
     public AircraftService(AircraftRepository aircraftRepository) {
-        this.aircraftRepository = aircraftRepository;
+        AircraftService.aircraftRepository = aircraftRepository;
     }
 
     public List<Aircraft> getAircrafts() {

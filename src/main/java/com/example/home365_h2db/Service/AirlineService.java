@@ -16,7 +16,7 @@ public class AirlineService {
     private static AirlineRepository airlineRepository;
 
     public AirlineService(AirlineRepository airlineRepository) {
-        this.airlineRepository = airlineRepository;
+        AirlineService.airlineRepository = airlineRepository;
 
     }
 
@@ -60,9 +60,9 @@ public class AirlineService {
     }
 
     public List<String> getAvailAbleDestinations(String airlineName) {
-        if (!this.airlineRepository.findByName(airlineName).isPresent())
+        if (!airlineRepository.findByName(airlineName).isPresent())
             throw new IllegalStateException("Airline isn't registered in the system");
-        LinkedList<String> availableDestinations = new LinkedList<String>();
+        LinkedList<String> availableDestinations = new LinkedList<>();
         double maxdis = 0;
         for (Aircraft a : AircraftService.getAirlinePlanes(airlineName)) {
             maxdis = Math.max(a.getMaxDistance(),maxdis);
