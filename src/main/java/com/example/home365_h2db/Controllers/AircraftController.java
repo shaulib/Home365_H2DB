@@ -2,6 +2,7 @@ package com.example.home365_h2db.Controllers;
 
 import com.example.home365_h2db.AirlineUniverse.Aircraft;
 import com.example.home365_h2db.Service.AircraftService;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

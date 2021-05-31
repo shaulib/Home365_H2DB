@@ -4,6 +4,7 @@ import com.example.home365_h2db.AirlineUniverse.Aircraft;
 import com.example.home365_h2db.AirlineUniverse.Airline;
 import com.example.home365_h2db.repository.AircraftRepository;
 import com.example.home365_h2db.repository.AirlineRepository;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
