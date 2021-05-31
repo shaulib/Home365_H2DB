@@ -30,9 +30,9 @@ public class AircraftController {
         aircraftService.addNewAircraft(aircraft);
     }
 
-    @PostMapping("getAirline'sAircraft")
+    @GetMapping("getAirline'sAircraft")
     public List<Aircraft> getAirlineAircrafts(@RequestParam(value = "airlineName") String airlineName){
-        return aircraftService.getAirlinePlanes(airlineName);
+        return AircraftService.getAirlinePlanes(airlineName);
     }
 
     /**

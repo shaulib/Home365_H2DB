@@ -30,9 +30,9 @@ public class DestinationController {
         }
 
 
-    @PostMapping("distancesFromAirline")
+    @GetMapping("distancesFromAirline")
     public List<Distance> GetDistances(@RequestParam("Airline") String airline){
-       return destinationService.getDistances(airline);
+       return DestinationService.getDistances(airline);
         }
     }
 

@@ -35,7 +35,7 @@ import java.util.List;
            return airlineService.buyAircraft(info,id);
         }
 
-        @PostMapping("availableDestinations")
+        @GetMapping("availableDestinations")
         public List<String> getAvailableDestinations(@RequestParam("airline") String airlineName)
         {
             return airlineService.getAvailAbleDestinations(airlineName);
