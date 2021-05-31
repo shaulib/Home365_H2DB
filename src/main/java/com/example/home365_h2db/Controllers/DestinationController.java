@@ -20,7 +20,7 @@ public class DestinationController {
     }
 
     @GetMapping
-        public List<Destination> getDestination(){
+        public List<Destination> getDestinations(){
             return destinationService.getDestinations();
         }
 
