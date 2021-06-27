@@ -44,6 +44,8 @@ public class AirlineService {
         if (!AircraftService.getAirlineRepository().findAircraftById(id).isPresent())
             throw new IllegalStateException("Aircraft id wasn't found");
         Aircraft a = AircraftService.getAirlineRepository().getById(id);
+        if (!a.getAirlineName().equals(seller))
+            throw new IllegalStateException("Aircraft isn't owned by "+ seller);
         double price = a.getOriginalPrice()*(1-a.getMonthsInuse()*0.02);
         Airline buyerAL = airlineRepository.findObjByName(buyer);
         if (buyerAL.getBalance() - price < 0)
